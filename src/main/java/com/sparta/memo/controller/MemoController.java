@@ -48,7 +48,10 @@ public class MemoController {
         return responseDto;
     }
 
-
+    /**
+     * 메모 조회하기
+     * @return
+     */
     @GetMapping("/memos")
     public List<MemoResponseDto> getMemos() {
         //Map To List
@@ -56,6 +59,6 @@ public class MemoController {
         return responseList;
     }
     
-    
+
     
 }
