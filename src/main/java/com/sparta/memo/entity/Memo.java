@@ -21,4 +21,13 @@ public class Memo {
         this.contents = requestDto.getContents();
     }
 
+    /**
+     * 메모 수정 함수
+     */
+    public void update(MemoRequestDto requestDto) {
+        this.username = requestDto.getUsername();
+        this.contents = requestDto.getContents();
+    }
+
+
 }
