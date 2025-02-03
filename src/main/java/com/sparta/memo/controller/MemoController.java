@@ -2,7 +2,6 @@ package com.sparta.memo.controller;
 
 import java.util.List;
 
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,8 +22,8 @@ public class MemoController {
 
     private final MemoService memoService;
 
-    public MemoController(JdbcTemplate jdbcTemplate){
-        this.memoService = new MemoService(jdbcTemplate);
+    public MemoController(MemoService memoService){
+        this.memoService = memoService;
     }
 
     @PostMapping("/memos")
