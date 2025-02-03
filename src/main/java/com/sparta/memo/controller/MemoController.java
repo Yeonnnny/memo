@@ -15,7 +15,6 @@ import com.sparta.memo.dto.MemoRequestDto;
 import com.sparta.memo.dto.MemoResponseDto;
 import com.sparta.memo.service.MemoService;
 
-
 @RestController
 @RequestMapping("/api")
 public class MemoController {

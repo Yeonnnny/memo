@@ -2,17 +2,31 @@ package com.sparta.memo.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.sparta.memo.dto.MemoRequestDto;
 import com.sparta.memo.dto.MemoResponseDto;
 import com.sparta.memo.entity.Memo;
 import com.sparta.memo.repository.MemoRepository;
 
+@Service
 public class MemoService {
     private final MemoRepository memoRepository;
+
+    // public MemoService(ApplicationContext context){
+    //     // 1. Bean '이름'으로 가져오기
+    //     // MemoRepository memoRepository = (MemoRepository) context.getBean("memoRepository");
+        
+    //     // 2. Bean '클래스' 형식으로 가져오기
+    //     MemoRepository memoRepository = context.getBean(MemoRepository.class);
+
+    //     this.memoRepository = memoRepository;
+    // }
 
     public MemoService(MemoRepository memoRepository){
         this.memoRepository = memoRepository;
     }
+
 
     public MemoResponseDto createMemo(MemoRequestDto requestDto) {
         // RequestDto -> Entity
