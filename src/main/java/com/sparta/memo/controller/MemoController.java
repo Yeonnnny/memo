@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sparta.memo.dto.MemoRequestDto;
 import com.sparta.memo.dto.MemoResponseDto;
 import com.sparta.memo.service.MemoService;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping("/api")
@@ -45,4 +47,9 @@ public class MemoController {
         return memoService.deleteMemo(id);
     }
 
+    @GetMapping("/memos/contents")
+    public List<MemoResponseDto> getMethodName(String keyword) {
+        return memoService.getMemosByKeyword(keyword);
+    }
+    
 }

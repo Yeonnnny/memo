@@ -63,5 +63,14 @@ public class MemoService {
             new IllegalArgumentException("선택한 메모는 존재하지 않습니다.")
         );
     }
+
+    /**
+     * keyword가 포함된 메모 반환
+     * @param keyword
+     * @return
+     */
+    public List<MemoResponseDto> getMemosByKeyword(String keyword) {
+        return memoRepository.findAllByContentsContainsOrderByModifiedAtDesc(keyword).stream().map(MemoResponseDto::new).toList();
+    }
     
 }

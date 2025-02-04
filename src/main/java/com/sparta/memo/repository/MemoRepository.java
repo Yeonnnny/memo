@@ -11,4 +11,6 @@ import com.sparta.memo.entity.Memo;
 public interface MemoRepository extends JpaRepository<Memo, Long>{
     
     List<Memo> findAllByOrderByModifiedAtDesc();
+
+    List<Memo> findAllByContentsContainsOrderByModifiedAtDesc(String keyword);
 }
